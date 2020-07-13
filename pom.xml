@@ -130,6 +130,28 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+               		<groupId>org.apache.maven.plugins</groupId>
+               		<artifactId>maven-release-plugin</artifactId>
+               		<version>3.0.0-M1</version>
+               		<configuration>
+               		<tagNameFormat>v@{project.version}</tagNameFormat>
+               		</configuration>
+            	</plugin>
+			
+		<plugin>
+			<groupId>org.flywaydb</groupId>
+        		<artifactId>flyway-maven-plugin</artifactId>
+			<version>6.3.2</version>
+		<configuration>
+                	<url>jdbc:mysql://172.31.47.196:3306</url>
+                	<user>inguser1</user>
+	        	<password>H@ckath0n</password>
+	       	<schemas>
+                        <schema>ingdevdb</schema>
+              	</schemas>
+ 		</configuration>	
+	</plugin>
 		</plugins>
 	</build>
 <profiles>
